@@ -1,7 +1,7 @@
 # Pull base image 
-From tomcat:8-jre8
+From tomcat:latest
 
-COPY ./target/webapp.war /usr/local/tomcat/webapps
+COPY /var/lib/jenkins/workspace/mvn/webapp/target/webapp.war /usr/local/tomcat/webapps
 
 EXPOSE 8080
 
