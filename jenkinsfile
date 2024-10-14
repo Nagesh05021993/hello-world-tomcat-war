@@ -16,7 +16,16 @@ pipeline{
                 //sh "mv target/*.war target/myweb.war"
             }
         }
-       stage("Deploy"){
+         stage('Docker Build and Tag') {
+           steps {
+              
+                sh 'docker build -t samplewebapp:latest .' 
+                //sh 'docker tag samplewebapp nikhilnidhi/samplewebapp:latest'
+                //sh 'docker tag samplewebapp nikhilnidhi/samplewebapp:$BUILD_NUMBER'
+               
+          }
+        }
+       /*stage("Deploy"){
             steps{
                     sshagent(['tomcat-user1']) {
 
@@ -31,7 +40,7 @@ pipeline{
                 }
             }
 
-       }
+       }*/
         
     }
 }
