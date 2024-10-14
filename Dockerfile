@@ -1,7 +1,7 @@
 # Pull base image 
-From tomcat:latest
+FROM tomcat:latest
 
-COPY /var/lib/jenkins/workspace/mvn/webapp/target/webapp.war /usr/local/tomcat/webapps
+ADD /var/lib/jenkins/workspace/mvn/webapp/target/webapp.war /usr/local/tomcat/webapps
 
 EXPOSE 8080
 
